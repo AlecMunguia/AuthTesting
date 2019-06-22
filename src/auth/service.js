@@ -1,5 +1,6 @@
 import { config } from "./config";
 import * as Auth0 from "auth0-js";
+// import auth0 from 'auth0-js';
 
 
 class Auth {
@@ -8,9 +9,26 @@ class Auth {
       clientID: config.clientId,
       redirectUri: config.redirect,
       audience: config.audience,
-      responseType: "id_token token",
+      responseType: "token",
       scope: "openid profile email"
     });
+
+    //  config = {
+    //   clientId: "1jLlAfCf2lhyEJY24U2lJOOETPp72f71",
+    //   domain: "greenleaves.auth0.com/",
+    //   redirect: "localhost:3000/close-popup",
+    //     // we will go over this redirect soon.
+    //   logoutUrl: "localhost:3000",
+    //   audience: "https://greenleavestesting"
+    // };
+    // auth0 = new auth0.WebAuth({
+    //   domain: 'greenleaves.auth0.com',
+    //   clientID: '1jLlAfCf2lhyEJY24U2lJOOETPp72f71',
+    //   redirectUri: 'http://localhost:3000/close-popup',
+    //   responseType: 'token id_token',
+    //   scope: 'openid'
+    // });
+  
   
     loginCallback = () => {};
     logoutCallback = () => {};
